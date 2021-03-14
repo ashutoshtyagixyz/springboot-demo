@@ -4,25 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Landon Hotel: Room Reservations</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Welcome to Room Reservations Page</h1>
-    <table>
-        <tr>
-            <td>Room</td>
-            <td>Room Number</td>
-            <td>Guest</td>
-        </tr>
-        <tr th:each="roomReservation: ${roomReservations}">
-            <td th:text="${roomReservation.roomName}">Room Name</td>
-            <td th:text="${roomReservation.roomNumber}">Room Number</td>
-            <td
-                th:text="${roomReservation.lastName}!=null?${roomReservation.lastName} + ', ' + ${roomReservation.firstName} : 'VACANT'">
-                Full Name</td>
+    <div class="container">
+        <h1>Welcome to Room Reservations Page</h1>
+        <table class="table table-hover table-bordered">
+            <tr class="table-info">
+                <th scope="col">Room</th>
+                <th scope="col">Room Number</th>
+                <th scope="col">Guest</th>
+            </tr>
+            <tr th:each="roomReservation: ${roomReservations}" scope="row">
+                <td th:text="${roomReservation.roomName}">Room Name</td>
+                <td th:text="${roomReservation.roomNumber}">Room Number</td>
+                <td
+                    th:text="${roomReservation.lastName}!=null?${roomReservation.lastName} + ', ' + ${roomReservation.firstName} : 'VACANT'">
+                    Full Name</td>
 
-        </tr>
-    </table>
+            </tr>
+        </table>
+    </div>
 </body>
 
 </html>
