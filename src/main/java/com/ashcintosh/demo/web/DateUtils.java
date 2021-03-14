@@ -7,7 +7,7 @@ import java.util.Date;
 public class DateUtils {
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 
-    public static Date createDateFromString(String dateString) {
+    public static Date createDateFromDateString(String dateString) {
         Date date = null;
         if (null != dateString) {
             try {
